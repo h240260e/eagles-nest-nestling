@@ -1,25 +1,16 @@
-const sheetURL = "https://script.google.com/a/macros/hit.ac.zw/s/AKfycbzCGTdXbEhW7m3tGy4U3RYWGq7xvO3FCqAfZpsh8TyovK6BeX3NCxcXtGfjBcxrSjRl/exec";
-
 const newsContainer = document.getElementById("news-cards");
 
-fetch(sheetURL)
+fetch("news.json")
     .then(response => {
         if (!response.ok) {
-            throw new Error("Could not connect to the news service.");
+            throw new Error("Could not load news.json");
         }
 
         return response.json();
     })
     .then(news => {
 
-        console.log("News received:", news);
-
         newsContainer.innerHTML = "";
-
-        if (news.length === 0) {
-            newsContainer.innerHTML = "<p>No news available at the moment.</p>";
-            return;
-        }
 
         news.forEach(item => {
 
