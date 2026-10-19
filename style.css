@@ -1,547 +1,370 @@
-/* Remove default browser spacing */
+
+/* ==================================
+   EAGLES NEST NESTLING
+   Professional School Website Design
+   ================================== */
+
+/* 1. Global Styles */
+:root {
+    --primary: #173F35;
+    --primary-dark: #102F28;
+    --gold: #E8B85C;
+    --cream: #FFF9EF;
+    --white: #FFFFFF;
+    --background: #F5F7F5;
+    --text: #26332F;
+    --muted: #66736D;
+    --border: #E1E8E3;
+    --shadow: 0 8px 24px rgba(23, 63, 53, 0.08);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
 
-/* Navigation Bar */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary);
+    line-height: 1.25;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 40px);
+}
+
+p {
+    color: var(--muted);
+}
+
+/* 2. Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 20px 60px;
-
-    background-color: #ffffff;
+    gap: 25px;
+    padding: 15px 7%;
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 10;
 }
 
-
-/* School Logo */
 .logo {
     display: flex;
     align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 .logo img {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     object-fit: contain;
 }
 
+.logo-text h2 {
+    color: #173F35;
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
 
-/* Navigation Links */
+.logo-text p {
+    color: #66736D;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+
 .nav-links {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px 22px;
     list-style: none;
-    gap: 30px;
 }
 
 
 .nav-links a {
+    display: inline-block;
     text-decoration: none;
-    color: #222;
-    font-size: 16px;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease;
 }
 
+.nav-links a:hover {
+    color: var(--primary);
+    border-bottom-color: var(--gold);
+}
 
-/* Hero Section */
+/* 3. Hero Section */
+
+/* 3. Hero Section */
 .hero {
-    min-height: 80vh;
-
+    min-height: 560px;
     display: flex;
-    justify-content: center;
     align-items: center;
-
+    justify-content: center;
     text-align: center;
-
-    background-color: #eaf2ff;
+    padding: 80px 7%;
+    background:
+        linear-gradient(
+            rgba(16, 47, 40, 0.62),
+            rgba(16, 47, 40, 0.72)
+        ),
+        url("school-photo.jpg") center/cover no-repeat;
 }
 
+.hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
 
-/* Hero Text */
 .hero-content h1 {
-    font-size: 55px;
-    margin-bottom: 20px;
+    color: var(--white);
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.15;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
 }
-
 
 .hero-content p {
-    font-size: 22px;
-    margin-bottom: 30px;
+    color: var(--white);
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.8;
+    margin-bottom: 32px;
 }
 
-
-/* Button */
 .hero-button {
     display: inline-block;
-
-    padding: 14px 30px;
-
-    background-color: #0b1b47;
-    color: whitesmoke;
-
+    padding: 15px 32px;
+    background: var(--gold);
+    color: var(--primary-dark);
     text-decoration: none;
-
-    border-radius: 6px;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, background 0.25s ease;
 }
-/* About Section */
+
+.hero-button:hover {
+    background: var(--white);
+    border-color: var(--white);
+    transform: translateY(-2px);
+}
+
+
+/* 4. General Section Headings */
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 42px;
+}
+
+.section-heading h2 {
+    margin-bottom: 14px;
+}
+
+.section-heading p {
+    font-size: 17px;
+}
+
+/* 5. About Section */
 .about {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    gap: 60px;
-
-    padding: 80px 10%;
+    gap: 55px;
+    padding: 85px 8%;
+    background: var(--white);
 }
 
-
-/* About Text */
 .about-text {
     flex: 1;
 }
 
-
 .about-text h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
-
 
 .about-text p {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 30px;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 25px;
 }
 
-
-/* About Button */
-.about-button {
-    display: inline-block;
-
-    padding: 12px 25px;
-
-    background-color: #28438f;
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 6px;
-}
-
-
-/* Image Placeholder */
 .about-image {
     flex: 1;
-
-    height: 300px;
-
-    background-color: #efe6f0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-    .about-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-    
-}
-/* Why Choose Us Section */
-.why-us {
-    padding: 80px 10%;
-    background-color: #f3eff2;
-}
-
-
-/* Section Heading */
-.section-heading {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-
-.section-heading h2 {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-
-.section-heading p {
-    font-size: 18px;
-}
-
-
-/* Feature Cards */
-.features {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-
-/* Individual Card */
-.feature-card {
-    background-color: burlywood;
-
-    padding: 30px;
-
-    text-align: center;
-
-    border-radius: 10px;
-}
-
-
-.feature-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-
-.feature-card p {
-    line-height: 1.6;
-    font-size: 16px;
-}
-/* Classes Section */
-.classes {
-    padding: 80px 10%;
-    background-color: burlywood;
-}
-
-
-/* Class Cards */
-.class-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-
-/* Individual Class Card */
-.class-card {
-    padding: 30px 20px;
-
-    text-align: center;
-
-    background-color: #f7f9fc;
-
-    border-radius: 10px;
-}
-/* ============================= */
-/* Mobile Responsive Design */
-/* ============================= */
-
-@media (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-    .news-cards {
-        grid-template-columns: 1fr;
-    }
-
-    /* Navigation */
-    .navbar {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-
-    /* Hero */
-    .hero {
-        min-height: 70vh;
-        padding: 40px 20px;
-    }
-
-    .hero-content h1 {
-        font-size: 38px;
-    }
-
-    .hero-content p {
-        font-size: 18px;
-    }
-
-
-    /* About */
-    .about {
-        flex-direction: column;
-        padding: 60px 20px;
-    }
-
-    .about-text h2 {
-        font-size: 32px;
-    }
-
-    .about-image {
-        width: 100%;
-    }
-
-
-    /* Why Choose Us */
-    .why-us {
-        padding: 60px 20px;
-    }
-
-    .section-heading h2 {
-        font-size: 32px;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* Classes */
-    .classes {
-        padding: 60px 20px;
-    }
-
-    .class-cards {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-.class-card h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-
-.class-card p {
-    line-height: 1.6;
-}
-/* News Section */
-.news {
-    padding: 80px 10%;
-    background-color: #f7f9fc;
-}
-
-
-/* News Cards */
-.news-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-
-/* Individual News Card */
-.news-card {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-
-.news-date {
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-
-.news-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-
-.news-card p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-
-.news-card a {
-    text-decoration: none;
-    font-weight: bold;
-}
-/* Contact Section */
-.contact {
-    padding: 80px 10%;
-    background-color: white;
-}
-
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    margin-top: 40px;
-}
-
-
-.contact-info h3 {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-
-.contact-info p {
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-
-/* Contact Form */
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-
-    border: 1px solid #ddd;
-    border-radius: 6px;
-
-    font-size: 16px;
-}
-
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-
-.contact-form button {
-    padding: 15px;
-
-    border: none;
-    border-radius: 6px;
-
-    background-color: #1d4ed8;
-    color: white;
-
-    font-size: 16px;
-    cursor: pointer;
-}
-/* Footer */
-.footer {
-    background-color: #111827;
-    color: white;
-    padding: 60px 10% 20px;
-}
-
-
-.footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 50px;
-}
-
-
-.footer h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-
-.footer h4 {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-
-.footer p {
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
-
-
-.footer a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-
-.footer-bottom {
-    border-top: 1px solid #374151;
-    margin-top: 40px;
-    padding-top: 20px;
-    text-align: center;
-}
-
-
-/* Footer on phones */
-@media (max-width: 768px) {
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-}
-/* Admissions Section */
-.admissions {
-    padding: 70px 10%;
-    background: #f5f7fa;
-}
-
-.admissions-content {
-    max-width: 800px;
-    margin: 30px auto 0;
-    background: white;
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-/* Gallery Section */
-.gallery {
-    padding: 70px 10%;
-    background: white;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    max-width: 1000px;
-    margin: 30px auto 0;
-}
-
-.gallery-item {
-    height: 300px;
+    min-width: 0;
+    height: 350px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 14px;
+    background: var(--cream);
+    box-shadow: var(--shadow);
 }
 
-.gallery-item img {
+.about-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
+/* 6. Why Choose Us */
+.why-us {
+    padding: 85px 8%;
+    background: var(--cream);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 30px 24px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 13px;
+}
+
+.feature-card p {
+    line-height: 1.7;
+}
+
+/* 7. Classes Section */
+.classes {
+    padding: 85px 8%;
+    background: var(--background);
+}
+
+.class-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 }
 
 
+.class-card {
+    padding: 32px 24px;
+    text-align: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.class-card h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.class-card p {
+    line-height: 1.7;
+}
+
+/* 8. Gallery Section */
+.gallery {
+    padding: 85px 8%;
+    background: var(--white);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--background);
+    box-shadow: var(--shadow);
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+/* 9. Admissions Section */
+.admissions {
+    padding: 85px 8%;
+    background: var(--cream);
+}
+
+.admissions-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 38px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
 .admissions-content h3 {
-    margin-bottom: 15px;
-    margin-top: 25px;
+    margin: 25px 0 12px;
 }
 
 .admissions-content h3:first-child {
@@ -549,8 +372,8 @@
 }
 
 .admissions-content p {
-    line-height: 1.7;
-    margin-bottom: 20px;
+    line-height: 1.8;
+    margin-bottom: 18px;
 }
 
 .admissions-content ul {
@@ -561,124 +384,100 @@
 .admissions-content li {
     margin-bottom: 8px;
 }
-/* Hero Section */
-.hero {
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url("school-photo.jpg") center/cover no-repeat;
+
+/* 10. News and Announcements */
+.news {
+    padding: 85px 8%;
+    background: var(--background);
 }
 
-.hero-content {
-    max-width: 800px;
-    color: white;
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 }
 
-.hero-content h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+.
+.news-card {
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
 }
 
-.hero-content p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 30px;
+.news-card:hover {
+    transform: translateY(-5px);
 }
 
-.hero-button {
-    display: inline-block;
-    padding: 14px 28px;
-    background: white;
-    color: #333;
+.news-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.news-card .news-date {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.news-card p {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.news-card a {
+    color: var(--primary);
+    font-weight: 700;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
 }
 
-.hero-button:hover {
-    opacity: 0.85;
+.news-card a:hover {
+    text-decoration: underline;
 }
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
 
-    .navbar {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-top: 15px;
-    }
-
-    .hero {
-        min-height: 450px;
-        padding: 30px 20px;
-    }
-
-    .hero-content h1 {
-        font-size: 34px;
-    }
-
-    .hero-content p {
-        font-size: 18px;
-    }
-
-    .about {
-        padding: 50px 5%;
-    }
-
-    .about-image {
-        height: 250px;
-    }
-
-    .gallery {
-        padding: 50px 5%;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item {
-        height: 250px;
-    }
-
-    .admissions {
-        padding: 50px 5%;
-    }
-
-    .admissions-content {
-        padding: 25px;
-    }
-
-}
-/* Contact Section */
+/* 11. Contact Section */
 .contact {
-    padding: 70px 10%;
-    background: #f5f7fa;
+    padding: 85px 8%;
+    background: var(--white);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info h3 {
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+.contact-info p {
+    margin-bottom: 18px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
 }
 
 .contact-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 1000px;
-    margin: 30px auto 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    margin: 35px auto 0;
 }
 
 .contact-item {
-    background: rgb(128, 104, 104);
-    padding: 30px;
+    padding: 28px 22px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
 }
 
 .contact-item h3 {
@@ -686,35 +485,98 @@
 }
 
 .contact-item p {
-    margin: 0;
+    overflow-wrap: anywhere;
 }
 
-@media (max-width: 768px) {
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
+/* Contact Form */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-/* Footer */
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #D3DDD6;
+    border-radius: 7px;
+    font: inherit;
+    color: var(--text);
+    background: var(--white);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.contact-form button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--white);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: var(--primary-dark);
+}
+
+/* 12. Footer */
 .footer {
-    background: #222;
-    color: white;
-    padding: 50px 10% 20px;
+    background: var(--primary-dark);
+    color: var(--white);
+    padding: 55px 8% 22px;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 40px;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.footer-content h3 {
-    margin-bottom: 15px;
+.footer h3,
+.footer h4 {
+    color: var(--white);
+    margin-bottom: 16px;
 }
 
-.footer-content p {
-    line-height: 1.6;
+.footer h3 {
+    font-size: 23px;
+}
+
+.footer h4 {
+    font-size: 18px;
+}
+
+.footer p {
+    color: #E0E8E3;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.footer a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer a:hover {
+    color: var(--gold);
 }
 
 .footer-links {
@@ -722,30 +584,143 @@
     flex-direction: column;
 }
 
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    margin-bottom: 8px;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
 .footer-bottom {
-    text-align: center;
-    border-top: 1px solid #555;
-    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 38px;
     padding-top: 20px;
+    text-align: center;
 }
 
+.footer-bottom p {
+    font-size: 14px;
+}
+
+/* 13. Keyboard Accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* 14. Tablet Screens */
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 15px 4%;
+    }
+
+    .nav-links {
+        gap: 12px 16px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .news-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* 15. Mobile Phones */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px 16px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 430px;
+        padding: 55px 6%;
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 30px;
+        padding: 60px 6%;
+    }
+
+    .about-image {
+        width: 100%;
+        height: 280px;
+    }
+
+    .why-us,
+    .classes,
+    .gallery,
+    .admissions,
+    .news,
+    .contact {
+        padding: 60px 6%;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .features,
+    .class-cards,
+    .news-cards,
+    .contact-container,
+    .contact-content,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card,
+    .class-card,
+    .news-card {
+        padding: 25px;
+    }
+
+    .gallery-item {
+        height: 260px;
+    }
+
+    .admissions-content {
+        padding: 25px;
+    }
+
+    .footer {
+        padding: 45px 6% 20px;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
+        gap: 28px;
         text-align: center;
     }
 
     .footer-links {
         align-items: center;
+    }
+}
+
+/* 16. Very Small Phones */
+@media (max-width: 380px) {
+    .nav-links {
+        gap: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 31px;
+    }
+
+    .about-image,
+    .gallery-item {
+        height: 220px;
     }
 }
